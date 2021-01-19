@@ -6,7 +6,7 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/12 15:53:16 by candace       #+#    #+#                 */
-/*   Updated: 2020/11/19 13:16:40 by candace       ########   odam.nl         */
+/*   Updated: 2020/12/08 13:08:26 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ void			*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t cnt;
 
 	cnt = 0;
-	while ((const char *)src && cnt < (n - 1))
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (cnt < n)
 	{
 		((char *)dst)[cnt] = ((char *)src)[cnt];
 		cnt++;

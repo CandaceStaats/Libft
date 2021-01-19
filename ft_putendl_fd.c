@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_putendl_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/04 13:49:53 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/09 14:59:00 by candace       ########   odam.nl         */
+/*   Created: 2021/01/19 12:06:42 by candace       #+#    #+#                 */
+/*   Updated: 2021/01/19 12:15:47 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t cnt;
-	size_t cntsrc;
-
-	cntsrc = 0;
-	cnt = 0;
-	if (n == 0)
-		return (ft_strlen(src));
-	while (dst[cnt] != '\0' && cnt < n)
-		cnt++;
-	while (src[cntsrc] != '\0' && cntsrc + cnt + 1 < n)
+	if (s && fd >= 0)
 	{
-		dst[cnt + cntsrc] = src[cntsrc];
-		cntsrc++;
+		write(fd, s, ft_strlen(s));
+		write(fd, "\n", 1);
 	}
-	while (src[cntsrc] != '\0')
-	{
-		cntsrc++;
-	}
-	dst[cnt + cntsrc] = '\0';
-	return (cnt + cntsrc);
 }

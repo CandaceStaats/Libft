@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_strmapi.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/04 13:49:53 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/09 14:59:00 by candace       ########   odam.nl         */
+/*   Created: 2021/01/18 14:04:37 by candace       #+#    #+#                 */
+/*   Updated: 2021/01/19 16:01:53 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t cnt;
-	size_t cntsrc;
+	char	*result;
+	int		cnt;
 
-	cntsrc = 0;
 	cnt = 0;
-	if (n == 0)
-		return (ft_strlen(src));
-	while (dst[cnt] != '\0' && cnt < n)
+	if (s == NULL)
+		return (NULL);
+	result = malloc((ft_strlen(s) + 1) * sizeof(char));
+	if (result == NULL)
+		return (NULL);
+	while (s[cnt] != '\0')
+	{
+		result[cnt] = (*f)(cnt, s[cnt]);
 		cnt++;
-	while (src[cntsrc] != '\0' && cntsrc + cnt + 1 < n)
-	{
-		dst[cnt + cntsrc] = src[cntsrc];
-		cntsrc++;
 	}
-	while (src[cntsrc] != '\0')
-	{
-		cntsrc++;
-	}
-	dst[cnt + cntsrc] = '\0';
-	return (cnt + cntsrc);
+	result[cnt] = '\0';
+	return (result);
 }

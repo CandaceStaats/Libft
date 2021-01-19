@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_substr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/04 13:49:53 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/09 14:59:00 by candace       ########   odam.nl         */
+/*   Created: 2020/11/24 09:00:02 by candace       #+#    #+#                 */
+/*   Updated: 2020/12/09 15:59:08 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t cnt;
-	size_t cntsrc;
+	unsigned int	cnt;
+	char			*substr;
 
-	cntsrc = 0;
 	cnt = 0;
-	if (n == 0)
-		return (ft_strlen(src));
-	while (dst[cnt] != '\0' && cnt < n)
+	if (s == NULL)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		len = 0;
+	substr = malloc((len + 1) * sizeof(char));
+	if (substr == NULL)
+		return (NULL);
+	while (cnt < len && s[cnt + start] != '\0')
+	{
+		substr[cnt] = s[cnt + start];
 		cnt++;
-	while (src[cntsrc] != '\0' && cntsrc + cnt + 1 < n)
-	{
-		dst[cnt + cntsrc] = src[cntsrc];
-		cntsrc++;
 	}
-	while (src[cntsrc] != '\0')
-	{
-		cntsrc++;
-	}
-	dst[cnt + cntsrc] = '\0';
-	return (cnt + cntsrc);
+	substr[cnt] = '\0';
+	return (substr);
 }

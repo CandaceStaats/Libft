@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strlcat.c                                       :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2020/11/04 13:49:53 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/09 14:59:00 by candace       ########   odam.nl         */
+/*   Created: 2021/01/19 11:28:32 by candace       #+#    #+#                 */
+/*   Updated: 2021/01/19 16:11:18 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t cnt;
-	size_t cntsrc;
-
-	cntsrc = 0;
-	cnt = 0;
-	if (n == 0)
-		return (ft_strlen(src));
-	while (dst[cnt] != '\0' && cnt < n)
-		cnt++;
-	while (src[cntsrc] != '\0' && cntsrc + cnt + 1 < n)
-	{
-		dst[cnt + cntsrc] = src[cntsrc];
-		cntsrc++;
-	}
-	while (src[cntsrc] != '\0')
-	{
-		cntsrc++;
-	}
-	dst[cnt + cntsrc] = '\0';
-	return (cnt + cntsrc);
+	if (fd >= 0)
+		write(fd, &c, 1);
 }
