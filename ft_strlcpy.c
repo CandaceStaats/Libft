@@ -6,7 +6,7 @@
 /*   By: cstaats <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 10:39:32 by cstaats       #+#    #+#                 */
-/*   Updated: 2020/12/09 13:30:22 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/25 12:43:54 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t n)
 	if (dst == NULL)
 		return (ft_strlen(src));
 	if (n == 0)
-		return (ft_strlen(src));	
+		return (ft_strlen(src));
 	while (src[cnt] != '\0' && cnt < n - 1)
 	{
 		dst[cnt] = src[cnt];

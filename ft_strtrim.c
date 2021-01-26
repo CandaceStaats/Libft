@@ -6,14 +6,14 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/25 15:51:05 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/10 13:33:07 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/25 12:56:29 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "libft.h"
 
-static void	ft_fill(char *s1, char *s2, char *s3)
+static void		ft_fill(char *s1, char *s2, char *s3)
 {
 	size_t cnt;
 
@@ -26,7 +26,7 @@ static void	ft_fill(char *s1, char *s2, char *s3)
 	s3[cnt] = '\0';
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	cnt;
 	char	*str;

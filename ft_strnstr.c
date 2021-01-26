@@ -6,7 +6,7 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/11 16:03:54 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/09 16:13:45 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/25 12:43:07 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*ft_strnstr(const char *hay, const char *needle, size_t len)
 		if (needle[0] == hay[cnt])
 		{
 			needcnt = 0;
-			while (needle[needcnt] == hay[cnt + needcnt] && needle[needcnt] != '\0'
-					&& cnt + needcnt < len)
+			while (needle[needcnt] == hay[cnt + needcnt]
+				&& needle[needcnt] != '\0' && cnt + needcnt < len)
 			{
 				needcnt++;
 			}
