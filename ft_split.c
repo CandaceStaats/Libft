@@ -6,13 +6,11 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/30 10:36:46 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/11 12:06:12 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/26 15:55:47 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
-#include <stdio.h>
 
 static int		ft_sets(const char *s1, char del)
 {

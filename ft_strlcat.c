@@ -6,7 +6,7 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/04 13:49:53 by candace       #+#    #+#                 */
-/*   Updated: 2020/12/09 14:59:00 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/26 15:44:09 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n)
 		dst[cnt + cntsrc] = src[cntsrc];
 		cntsrc++;
 	}
+	if (cnt < n)
+		dst[cnt + cntsrc] = '\0';
 	while (src[cntsrc] != '\0')
 	{
 		cntsrc++;
 	}
-	dst[cnt + cntsrc] = '\0';
 	return (cnt + cntsrc);
 }

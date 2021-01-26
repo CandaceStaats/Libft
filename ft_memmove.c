@@ -6,7 +6,7 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/17 13:30:11 by candace       #+#    #+#                 */
-/*   Updated: 2020/11/19 13:17:08 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/26 15:27:17 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,25 @@
 
 void			*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*csrc;
-	char	*cdst;
 	size_t	cnt;
 
 	if (src == dst)
 		return (dst);
-	csrc = (char *)src;
-	cdst = (char *)dst;
 	if (src < dst)
 	{
 		cnt = len;
-		while (cnt-- > 0)
-			cdst[cnt] = csrc[cnt];
+		while (cnt > 0)
+		{
+			cnt--;
+			((char *)(dst))[cnt] = ((char *)(src))[cnt];
+		}
 	}
 	else
 	{
 		cnt = 0;
 		while (cnt < len)
 		{
-			cdst[cnt] = csrc[cnt];
+			((char *)(dst))[cnt] = ((char *)(src))[cnt];
 			cnt++;
 		}
 	}

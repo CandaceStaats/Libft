@@ -6,7 +6,7 @@
 /*   By: cstaats <marvin@codam.nl>                    +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/10/30 11:20:32 by cstaats       #+#    #+#                 */
-/*   Updated: 2021/01/19 12:16:39 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/26 15:49:29 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,5 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 #endif

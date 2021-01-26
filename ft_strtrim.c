@@ -6,7 +6,7 @@
 /*   By: candace <candace@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2020/11/25 15:51:05 by candace       #+#    #+#                 */
-/*   Updated: 2021/01/25 12:56:29 by candace       ########   odam.nl         */
+/*   Updated: 2021/01/26 14:26:55 by candace       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void		ft_fill(char *s1, char *s2, char *s3)
 	size_t cnt;
 
 	cnt = 0;
-	while (s2 - s1 > cnt)
+	while ((size_t)(s2 - s1) > cnt)
 	{
 		s3[cnt] = s1[cnt];
 		cnt++;
